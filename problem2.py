@@ -12,7 +12,7 @@ find the sum of the even-valued terms.
 
 
 def fib():
-    a, b = 1, 2
+    a, b = 1, 1
     yield a
     yield b
     while True:
@@ -26,5 +26,5 @@ def fib_with_ceiling(max_value):
             break
         yield value
 
-
-print(sum(x for x in fib_with_ceiling(4000000) if x % 2 == 0))
+if __name__ == '__main__':
+    print(sum(x for x in fib_with_ceiling(4000000) if x % 2 == 0))
