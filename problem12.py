@@ -55,14 +55,15 @@ def count_divisors_2(n):
     return reduce(mul, counts)
 
 
-t = triangle_numbers()
-triangle = 1
-while count_divisors_2(triangle) <= 5:
-    triangle = next(t)
-print(triangle)
-while count_divisors_2(triangle) <= 500:
-    triangle = next(t)
-print(triangle)
+if __name__ == '__main__':
+    t = triangle_numbers()
+    triangle = 1
+    while count_divisors_2(triangle) <= 5:
+        triangle = next(t)
+    print(triangle)
+    while count_divisors_2(triangle) <= 500:
+        triangle = next(t)
+    print(triangle)
 
-for n in range(15):
-    print(n*(n+1)//2)
+    for n in range(15):
+        print(n*(n+1)//2)
