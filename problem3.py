@@ -26,5 +26,5 @@ def prime_factors(num):
         if num == 1:
             break
 
-
-print(max(prime_factors(600851475143)))
+if __name__ == '__main__':
+    print(max(prime_factors(600851475143)))
