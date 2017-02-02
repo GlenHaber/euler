@@ -30,8 +30,9 @@ def word_score(word):
 def is_triangle_word(word):
     return is_triangle_number(word_score(word))
 
-print(is_triangle_word('SKY'))
+if __name__ == '__main__':
+    print(is_triangle_word('SKY'))
 
-with open('p042_words.txt') as f:
-    words = (word.replace('"', '') for word in f.read().split(','))
-    print(len([word for word in words if is_triangle_word(word)]))
+    with open('p042_words.txt') as f:
+        words = (word.replace('"', '') for word in f.read().split(','))
+        print(len([word for word in words if is_triangle_word(word)]))

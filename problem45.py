@@ -19,9 +19,9 @@ from problem44 import is_pentagonal
 def is_hexagonal(num):
     return ((1 + sqrt(1 + 8 * num)) / 4).is_integer()
 
-
-for t in triangle_numbers():
-    if is_pentagonal(t) and is_hexagonal(t):
-        print(t)
-        if t > 40755:
-            break
+if __name__ == '__main__':
+    for t in triangle_numbers():
+        if is_pentagonal(t) and is_hexagonal(t):
+            print(t)
+            if t > 40755:
+                break

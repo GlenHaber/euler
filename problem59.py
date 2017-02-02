@@ -28,6 +28,6 @@ key1 = ord(' ') ^ max(cipher[0::3], key=lambda ch: cipher[0::3].count(ch))
 key2 = ord(' ') ^ max(cipher[1::3], key=lambda ch: cipher[1::3].count(ch))
 key3 = ord(' ') ^ max(cipher[2::3], key=lambda ch: cipher[2::3].count(ch))
 key = [key1, key2, key3]
-decrypted = [ch^key[i%3] for i,ch in enumerate(cipher)]
+decrypted = [ch ^ key[i % 3] for i, ch in enumerate(cipher)]
 print(''.join(map(chr, decrypted)))
 print(sum(decrypted))
