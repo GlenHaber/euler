@@ -38,6 +38,17 @@ def p(n):
         known[n] = total
     return known[n]
 
-start = time()
-print(p(100)-1)
-print(time() - start)
+
+if __name__ == '__main__':
+    start = time()
+    print(p(100) - 1)
+    print(time() - start)
+
+    start = time()
+    ways = [0] * 101
+    ways[0] = 1
+    for i in range(1, 100):
+        for j in range(i, 101):
+            ways[j] += ways[j - i]
+    print(ways[100])
+    print(time() - start)
