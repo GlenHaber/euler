@@ -63,11 +63,12 @@ def solve_diophantine(D):
 
 assert [solve_diophantine(D)[0] for D in (2, 3, 5, 6, 7)] == [3, 2, 9, 5, 8]
 
-max_D = max_x = 0
-for D in range(1, 1001):
-    if sqrt(D).is_integer():
-        continue
-    h, k = solve_diophantine(D)
-    if h > max_x:
-        max_D, max_x = D, h
-print('Answer:', max_D)
+if __name__ == '__main__':
+    max_D = max_x = 0
+    for D in range(1, 1001):
+        if sqrt(D).is_integer():
+            continue
+        h, k = solve_diophantine(D)
+        if h > max_x:
+            max_D, max_x = D, h
+    print('Answer:', max_D)

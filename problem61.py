@@ -78,5 +78,5 @@ def find_set():
                                         segments = {n % 100 for n in (n1, n2, n3, n4, n5, n6)}
                                         if min(segments) >= 10 and len(segments) == 6:
                                             return n1 + n2 + n3 + n4 + n5 + n6
-
-print(find_set())
+if __name__ == '__main__':
+    print(find_set())
