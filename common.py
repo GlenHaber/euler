@@ -1,6 +1,7 @@
-from math import sqrt
+from math import sqrt, factorial
 
 
+# PRIME NUMBERS
 def prime_sieve(ceiling, min_value=2):
     results = [True] * ceiling
     results[0] = results[1] = False
@@ -68,6 +69,11 @@ def _miller_rabin_witness(n, a):
     if check_1 != 1:
         return True
     return False
+
+
+# COMBINATORICS
+def ncr(n, r):
+    return factorial(n) // (factorial(r) * factorial(n - r))
 
 
 if __name__ == '__main__':
