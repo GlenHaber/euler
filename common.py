@@ -1,6 +1,22 @@
 from math import sqrt, factorial
 
 
+def memoize(func):
+    class MemoCache(dict):
+        def __init__(self, f):
+            super().__init__()
+            self.f = f
+
+        def __call__(self, *args):
+            return self[args]
+
+        def __missing__(self, key):
+            ret = self[key] = self.f(*key)
+            return ret
+
+    return MemoCache(func)
+
+
 # PRIME NUMBERS
 def prime_sieve(ceiling, min_value=2):
     results = [True] * ceiling
@@ -74,11 +90,3 @@ def _miller_rabin_witness(n, a):
 # COMBINATORICS
 def ncr(n, r):
     return factorial(n) // (factorial(r) * factorial(n - r))
-
-
-if __name__ == '__main__':
-    print(miller_rabin_test(23))
-    print(miller_rabin_test(25))
-    for i in range(1, 50):
-        if miller_rabin_test(i):
-            print(i)
